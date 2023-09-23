@@ -17,11 +17,19 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
+
+
+    
     public const HOME = '/home';
 
     /**
-     * Define your route model bindings, pattern filters, and other route configuration.
+     * The controller namespace for the aplication.
+     * When present controller route declarationa will automatically be prefixed with this
+     * @var     
      */
+
+     protected $namespace = 'App\\Http\\Controllers';
+
     public function boot(): void
     {
         RateLimiter::for('api', function (Request $request) {
